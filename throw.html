@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>exception handelling</h1>
+    <p>enter a number between 5 & 10</p>
+    <input type="text" id="enter">
+    <button id="press" onclick="validate()">press</button>
+    <p id="num"></p>
+
+    <script>
+        let enter = document.getElementById("enter");
+
+        // let press = document.getElementById("press");
+
+        // let num = document.getElementById("num");
+
+        function validate() {
+
+            let x = enter.value;
+
+            try {
+
+                if (x =="") throw "field is emtpy";
+
+                if (isNaN(x)) throw "not a number";
+
+                if (x < 5) throw "low value";
+
+                if (x > 10) throw "high-value";
+
+            } catch (error) {
+                num.innerHTML = "Input is " + error;
+
+            }
+
+           
+
+        }
+    </script>
+</body>
+
+</html>
